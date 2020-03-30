@@ -1,6 +1,6 @@
 class School
-  roster => {
-    
+  roster = {
+    value => {}
   }
   
   def add_student(student_name, grade)
