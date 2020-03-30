@@ -6,36 +6,25 @@ class School
     @roster = {}
   end 
   
-  def add_student(student, level)
-    # this sort of means #=> a || a = b ... or #=> x || x = y
-    # it's freak'n weird
-    roster[level] ||= []
-    roster[level] << student
+  def add_student(student, grade)
+    roster[grade] ||= []
+    roster[grade] << student
   end 
   
-  def grade(level)
-    roster.detect do |x, y| 
-      if x == level
-        return y 
+  def grade(grade)
+    roster.detect do |i, j| 
+      if i == grade
+        return j
       end 
     end 
   end 
   
-# This works, but it isn't passing learn.co's tests cause of 
-# how it displays syntactically...but the same information is there
-#  def sort 
-#    roster.sort_by do |x, y| 
-#      x 
-#    end 
-#  end 
-
-# Here's learn.co's solution:
 def sort 
-  nu_hash = {}
-  roster.each do |x, y| 
-    nu_hash[x] = y.sort 
+  new_hash = {}
+  roster.each do |i, j| 
+    new_hash[i] = j.sort 
   end 
-  nu_hash
+  new_hash
 end 
   
 end 
